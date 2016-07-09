@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#DDD"
+    android:background="#E0E0E0"
     tools:context=".ExampleActivity">
 
     <ImageView
@@ -19,6 +19,7 @@
         android:layout_centerInParent="true"
         android:src="@drawable/ic_anchor"
         android:tint="@color/colorAccent"
+        android:background="?android:selectableItemBackground"
         />
 
     <LinearLayout
