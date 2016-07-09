@@ -1,5 +1,5 @@
 # RelativePopupWindow
-Android PopupWindow that can be easily layout relative to anchor View.
+Android PopupWindow that can be easily located relative to anchor View.
 
 ![Art](art/art1.gif)
 
