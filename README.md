@@ -23,11 +23,11 @@ popup.showOnAnchor(anchor, VerticalPosition.TOP, HorizontalPosition.CENTER);
 
 ### HorizontalPosition
 
-- TOP
-- ALIGN_BOTTOM
+- LEFT
+- ALIGN_RIGHT
 - CENTER
-- ALIGN_TOP
-- BOTTOM
+- ALIGN_LEFT
+- RIGHT
 
 ## License
 
