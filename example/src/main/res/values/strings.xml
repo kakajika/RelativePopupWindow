@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RelativePopupWindow</string>
+    <string-array name="vertical_positions">
+        <item>CENTER</item>
+        <item>TOP</item>
+        <item>BOTTOM</item>
+        <item>ALIGN_TOP</item>
+        <item>ALIGN_BOTTOM</item>
+    </string-array>
+    <string-array name="horizontal_positions">
+        <item>CENTER</item>
+        <item>LEFT</item>
+        <item>RIGHT</item>
+        <item>ALIGN_LEFT</item>
+        <item>ALIGN_RIGHT</item>
+    </string-array>
+</resources>
