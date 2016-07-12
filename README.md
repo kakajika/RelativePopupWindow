@@ -29,6 +29,14 @@ popup.showOnAnchor(anchor, VerticalPosition.TOP, HorizontalPosition.CENTER);
 - ALIGN_LEFT
 - RIGHT
 
+## Install
+
+This library is available in jcenter.
+
+```groovy
+compile 'com.labo.kaji:relativepopupwindow:0.1.1'
+```
+
 ## License
 
 MIT License.
