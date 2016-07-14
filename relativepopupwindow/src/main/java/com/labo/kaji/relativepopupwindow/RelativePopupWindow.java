@@ -1,9 +1,12 @@
 package com.labo.kaji.relativepopupwindow;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.PopupWindowCompat;
+import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.PopupWindow;
@@ -51,6 +54,39 @@ public class RelativePopupWindow extends PopupWindow {
 
     public RelativePopupWindow(Context context) {
         super(context);
+    }
+
+    public RelativePopupWindow(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public RelativePopupWindow(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public RelativePopupWindow(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+    public RelativePopupWindow() {
+        super();
+    }
+
+    public RelativePopupWindow(View contentView) {
+        super(contentView);
+    }
+
+    public RelativePopupWindow(int width, int height) {
+        super(width, height);
+    }
+
+    public RelativePopupWindow(View contentView, int width, int height) {
+        super(contentView, width, height);
+    }
+
+    public RelativePopupWindow(View contentView, int width, int height, boolean focusable) {
+        super(contentView, width, height, focusable);
     }
 
     /**
