@@ -13,18 +13,18 @@ Android PopupWindow that can be easily located relative to anchor View.
 Extend [RelativePopupWindow](relativepopupwindow/src/main/java/com/labo/kaji/relativepopupwindow/RelativePopupWindow.java) class and call showOnAnchor().
 
 ```java
-popup.showOnAnchor(anchor, VerticalPosition.TOP, HorizontalPosition.CENTER);
+popup.showOnAnchor(anchor, VerticalPosition.ABOVE, HorizontalPosition.CENTER);
 ```
 
 ## Position Parameters
 
 ### VerticalPosition
 
-- TOP
+- ABOVE
 - ALIGN_BOTTOM
 - CENTER
 - ALIGN_TOP
-- BOTTOM
+- BELOW
 
 ### HorizontalPosition
 
