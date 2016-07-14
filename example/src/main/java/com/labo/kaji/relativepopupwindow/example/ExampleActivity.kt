@@ -30,8 +30,20 @@ class ExampleActivity : AppCompatActivity() {
         }
 
         button1.setOnClickListener { view ->
-            @VerticalPosition val vertPos = spinner_vertical.selectedItemPosition
-            @HorizontalPosition val horizPos = spinner_horizontal.selectedItemPosition
+            val vertPos = when (spinner_vertical.selectedItemPosition) {
+                0 -> VerticalPosition.ABOVE
+                1 -> VerticalPosition.ALIGN_BOTTOM
+                2 -> VerticalPosition.CENTER
+                3 -> VerticalPosition.ALIGN_TOP
+                else -> VerticalPosition.BELOW
+            }
+            val horizPos = when (spinner_vertical.selectedItemPosition) {
+                0 -> HorizontalPosition.LEFT
+                1 -> HorizontalPosition.ALIGN_RIGHT
+                2 -> HorizontalPosition.CENTER
+                3 -> HorizontalPosition.ALIGN_LEFT
+                else -> HorizontalPosition.RIGHT
+            }
             CardPopup(view.context).showOnAnchor(view, vertPos, horizPos)
         }
     }
