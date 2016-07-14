@@ -29,7 +29,7 @@ publish {
     userOrg = 'kakajika'
     groupId = 'com.labo.kaji'
     artifactId = 'relativepopupwindow'
-    publishVersion = '0.1.1'
+    publishVersion = '0.1.2'
     desc = 'Android PopupWindow that can be easily located relative to anchor View.'
     website = 'https://github.com/kakajika/RelativePopupWindow'
 }
