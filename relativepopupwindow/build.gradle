@@ -3,13 +3,13 @@ apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion "24.0.1"
 
     defaultConfig {
-        minSdkVersion 7
+        minSdkVersion 9
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0"
+        versionName "0.2.0"
     }
     buildTypes {
         release {
@@ -22,14 +22,14 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:support-v4:24.2.0'
 }
 
 publish {
     userOrg = 'kakajika'
     groupId = 'com.labo.kaji'
     artifactId = 'relativepopupwindow'
-    publishVersion = '0.1.2'
+    publishVersion = android.defaultConfig.versionName
     desc = 'Android PopupWindow that can be easily located relative to anchor View.'
     website = 'https://github.com/kakajika/RelativePopupWindow'
 }
