@@ -17,8 +17,8 @@ Extend [RelativePopupWindow](relativepopupwindow/src/main/java/com/labo/kaji/rel
 popup.showOnAnchor(anchor, VerticalPosition.ABOVE, HorizontalPosition.CENTER);
 ```
 
-See detail example in [ExampleCardPopup.kt](example/src/main/java/com/labo/kaji/relativepopupwindow/example/ExampleCardPopup.kt).
-(This example is written in Kotlin, sorry!)
+See detail example in [ExampleCardPopup.kt](example/src/main/kotlin/com/labo/kaji/relativepopupwindow/example/ExampleCardPopup.kt)
+or in Java, [ExampleCardPopup.java](example/src/main/java/com/labo/kaji/relativepopupwindow/example/java/ExampleCardPopup.java).
 
 ## Position Parameters
 
