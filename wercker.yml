@@ -1,0 +1,31 @@
+box:
+  id: kakajika/wercker-container-android
+  username: $USERNAME
+  password: $PASSWORD
+  tag: latest
+# Build definition
+build:
+  steps:
+    - script:
+        name: show base information
+        code: |
+          ./gradlew -v
+          echo $ANDROID_HOME
+          echo $ANDROID_BUILD_TOOLS
+          echo $ANDROID_UPDATE_FILTER
+    # A step that executes `gradle build` command
+    - script:
+        name: build app
+        code: |
+          ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
+  after-steps:
+    - install-packages:
+        packages: ruby
+    - wantedly/pretty-slack-notify:
+        webhook_url: $SLACK_WEBHOOK_URL
+deploy:
+  steps:
+    - script:
+        name: upload to deploygate
+        code: |
+          curl -F file=@example/build/outputs/apk/example-debug.apk -F token="$DEPLOYGATE_API_KEY" https://deploygate.com/api/users/$USERNAME/apps

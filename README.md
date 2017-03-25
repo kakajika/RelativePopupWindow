@@ -1,5 +1,6 @@
 # RelativePopupWindow
 
+[![wercker status](https://app.wercker.com/status/dd38c76d499fee2384c2cdcba37223ba/s/master)](https://app.wercker.com/project/byKey/dd38c76d499fee2384c2cdcba37223ba)
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 <img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat">
 [![API](https://img.shields.io/badge/API-9%2B-yellow.svg?style=flat)](https://android-arsenal.com/api?level=9)
