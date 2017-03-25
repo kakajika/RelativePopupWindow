@@ -1,5 +1,3 @@
-local.properties
-
 # for gradle, IDEA
 .gradle
 build/
@@ -8,12 +6,13 @@ build/
 .idea/*.xml
 .idea/.name
 .idea/copyright/
+.idea/dictionaries/
 .idea/libraries/
 .idea/scopes/
 .idea/inspectionProfiles/
 
 
-### https://raw.github.com/github/gitignore/c0de8bc140e3079c93f2970be853d310602a5ddb/Android.gitignore
+### https://raw.github.com/github/gitignore/2c0cb52a67921cf3dffb8098ba027f376f73f859/Android.gitignore
 
 # Built application files
 *.apk
@@ -52,13 +51,27 @@ captures/
 # Intellij
 *.iml
 .idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/dictionaries
 .idea/libraries
 
 # Keystore files
 *.jks
 
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
 
-### https://raw.github.com/github/gitignore/c0de8bc140e3079c93f2970be853d310602a5ddb/Gradle.gitignore
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+
+### https://raw.github.com/github/gitignore/2c0cb52a67921cf3dffb8098ba027f376f73f859/Gradle.gitignore
 
 .gradle
 /build/
@@ -76,7 +89,57 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 
-### https://raw.github.com/github/gitignore/c0de8bc140e3079c93f2970be853d310602a5ddb/Global/OSX.gitignore
+### https://raw.github.com/github/gitignore/2c0cb52a67921cf3dffb8098ba027f376f73f859/Global/JetBrains.gitignore
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+
+# Sensitive or high-churn files:
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+
+# Gradle:
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# Mongo Explorer plugin:
+.idea/**/mongoSettings.xml
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+
+### https://raw.github.com/github/gitignore/2c0cb52a67921cf3dffb8098ba027f376f73f859/Global/macOS.gitignore
 
 *.DS_Store
 .AppleDouble
@@ -106,11 +169,12 @@ Temporary Items
 .apdisk
 
 
-### https://raw.github.com/github/gitignore/c0de8bc140e3079c93f2970be853d310602a5ddb/Global/Windows.gitignore
+### https://raw.github.com/github/gitignore/2c0cb52a67921cf3dffb8098ba027f376f73f859/Global/Windows.gitignore
 
-# Windows image file caches
+# Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
+ehthumbs_vista.db
 
 # Folder config file
 Desktop.ini
