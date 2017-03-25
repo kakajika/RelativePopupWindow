@@ -44,7 +44,7 @@ or in Java, [ExampleCardPopup.java](example/src/main/java/com/labo/kaji/relative
 This library is available in jcenter.
 
 ```groovy
-compile 'com.labo.kaji:relativepopupwindow:0.2.1'
+compile 'com.labo.kaji:relativepopupwindow:0.2.2'
 ```
 
 ## License
