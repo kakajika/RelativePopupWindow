@@ -39,12 +39,20 @@ or in Java, [ExampleCardPopup.java](example/src/main/java/com/labo/kaji/relative
 - ALIGN_LEFT
 - RIGHT
 
+### Fit In Screen
+
+If you want Popup not to fit in screen automatically, add parameter to disable it.
+
+```java
+popup.showOnAnchor(anchor, VerticalPosition.ABOVE, HorizontalPosition.CENTER, false);
+```
+
 ## Install
 
 This library is available in jcenter.
 
 ```groovy
-compile 'com.labo.kaji:relativepopupwindow:0.2.2'
+compile 'com.labo.kaji:relativepopupwindow:0.3.1'
 ```
 
 ## License
