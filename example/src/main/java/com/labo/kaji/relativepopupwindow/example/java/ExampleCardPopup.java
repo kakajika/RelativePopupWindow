@@ -31,8 +31,8 @@ public class ExampleCardPopup extends RelativePopupWindow {
     }
 
     @Override
-    public void showOnAnchor(@NonNull View anchor, int vertPos, int horizPos, int x, int y) {
-        super.showOnAnchor(anchor, vertPos, horizPos, x, y);
+    public void showOnAnchor(@NonNull View anchor, int vertPos, int horizPos, int x, int y, boolean fitInScreen) {
+        super.showOnAnchor(anchor, vertPos, horizPos, x, y, fitInScreen);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             circularReveal(anchor);
         }

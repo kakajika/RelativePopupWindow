@@ -6,6 +6,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 
 import com.labo.kaji.relativepopupwindow.RelativePopupWindow.HorizontalPosition;
@@ -42,6 +43,8 @@ public class ExampleActivity extends AppCompatActivity {
         adapterHeight.addAll(getResources().getStringArray(R.array.height));
         adapterHeight.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_height.setAdapter(adapterHeight);
+
+        final CheckBox checkbox_fit_in_screen = (CheckBox) findViewById(R.id.checkbox_fit_in_screen);
 
         findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +108,6 @@ public class ExampleActivity extends AppCompatActivity {
                     default:
                         throw new IllegalStateException();
                 }
-
                 final int horizPos;
                 switch (spinner_horizontal.getSelectedItemPosition()) {
                     case 0:
@@ -126,7 +128,8 @@ public class ExampleActivity extends AppCompatActivity {
                     default:
                         throw new IllegalStateException();
                 }
-                popup.showOnAnchor(view, vertPos, horizPos);
+                final boolean fitInScreen = checkbox_fit_in_screen.isChecked();
+                popup.showOnAnchor(view, vertPos, horizPos, fitInScreen);
             }
         });
     }

@@ -55,7 +55,8 @@ class ExampleActivity : AppCompatActivity() {
                 4 -> HorizontalPosition.RIGHT
                 else -> throw IllegalStateException()
             }
-            popup.showOnAnchor(view, vertPos, horizPos)
+            val fitInScreen = checkbox_fit_in_screen.isChecked
+            popup.showOnAnchor(view, vertPos, horizPos, fitInScreen)
         }
     }
 

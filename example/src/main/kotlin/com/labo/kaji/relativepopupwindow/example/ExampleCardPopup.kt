@@ -27,8 +27,8 @@ class ExampleCardPopup(context: Context) : RelativePopupWindow(context) {
         }
     }
 
-    override fun showOnAnchor(anchor: View, vertPos: Int, horizPos: Int, x: Int, y: Int) {
-        super.showOnAnchor(anchor, vertPos, horizPos, x, y)
+    override fun showOnAnchor(anchor: View, vertPos: Int, horizPos: Int, x: Int, y: Int, fitInScreen: Boolean) {
+        super.showOnAnchor(anchor, vertPos, horizPos, x, y, fitInScreen)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             circularReveal(anchor)
         }
