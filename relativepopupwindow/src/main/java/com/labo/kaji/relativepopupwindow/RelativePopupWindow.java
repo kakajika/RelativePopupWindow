@@ -101,6 +101,17 @@ public class RelativePopupWindow extends PopupWindow {
     }
 
     /**
+     * Show at relative position to anchor View.
+     * @param anchor Anchor View
+     * @param vertPos Vertical Position Flag
+     * @param horizPos Horizontal Position Flag
+     * @param fitInScreen Automatically fit in screen or not
+     */
+    public void showOnAnchor(@NonNull View anchor, @VerticalPosition int vertPos, @HorizontalPosition int horizPos, boolean fitInScreen) {
+        showOnAnchor(anchor, vertPos, horizPos, 0, 0, fitInScreen);
+    }
+
+    /**
      * Show at relative position to anchor View with translation.
      * @param anchor Anchor View
      * @param vertPos Vertical Position Flag
@@ -109,10 +120,30 @@ public class RelativePopupWindow extends PopupWindow {
      * @param y Translation Y
      */
     public void showOnAnchor(@NonNull View anchor, @VerticalPosition int vertPos, @HorizontalPosition int horizPos, int x, int y) {
+        showOnAnchor(anchor, vertPos, horizPos, x, y, true);
+    }
+
+    /**
+     * Show at relative position to anchor View with translation.
+     * @param anchor Anchor View
+     * @param vertPos Vertical Position Flag
+     * @param horizPos Horizontal Position Flag
+     * @param x Translation X
+     * @param y Translation Y
+     * @param fitInScreen Automatically fit in screen or not
+     */
+    public void showOnAnchor(@NonNull View anchor, @VerticalPosition int vertPos, @HorizontalPosition int horizPos, int x, int y, boolean fitInScreen) {
+        setClippingEnabled(fitInScreen);
         View contentView = getContentView();
         contentView.measure(makeDropDownMeasureSpec(getWidth()), makeDropDownMeasureSpec(getHeight()));
         final int measuredW = contentView.getMeasuredWidth();
         final int measuredH = contentView.getMeasuredHeight();
+        if (!fitInScreen) {
+            final int[] anchorLocation = new int[2];
+            anchor.getLocationInWindow(anchorLocation);
+            x += anchorLocation[0];
+            y += anchorLocation[1] + anchor.getHeight();
+        }
         switch (vertPos) {
             case VerticalPosition.ABOVE:
                 y -= measuredH + anchor.getHeight();
@@ -147,7 +178,11 @@ public class RelativePopupWindow extends PopupWindow {
                 x += anchor.getWidth();
                 break;
         }
-        PopupWindowCompat.showAsDropDown(this, anchor, x, y, Gravity.NO_GRAVITY);
+        if (fitInScreen) {
+            PopupWindowCompat.showAsDropDown(this, anchor, x, y, Gravity.NO_GRAVITY);
+        } else {
+            showAtLocation(anchor, Gravity.NO_GRAVITY, x, y);
+        }
     }
 
     @SuppressWarnings("ResourceType")
