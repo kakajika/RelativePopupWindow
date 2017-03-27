@@ -96,6 +96,14 @@
             android:padding="8dp"
             />
 
+        <CheckBox
+            android:id="@+id/checkbox_fit_in_screen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fit In Screen"
+            android:checked="true"
+            />
+
     </LinearLayout>
 
 </LinearLayout>
