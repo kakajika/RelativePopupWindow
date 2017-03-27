@@ -14,4 +14,18 @@
         <item>ALIGN_LEFT</item>
         <item>RIGHT</item>
     </string-array>
+    <string-array name="width">
+        <item>WRAP_CONTENT</item>
+        <item>MATCH_PARENT</item>
+        <item>80dp</item>
+        <item>240dp</item>
+        <item>480dp</item>
+    </string-array>
+    <string-array name="height">
+        <item>WRAP_CONTENT</item>
+        <item>MATCH_PARENT</item>
+        <item>80dp</item>
+        <item>240dp</item>
+        <item>480dp</item>
+    </string-array>
 </resources>

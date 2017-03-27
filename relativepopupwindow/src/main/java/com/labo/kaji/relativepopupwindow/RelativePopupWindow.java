@@ -9,6 +9,7 @@ import android.support.v4.widget.PopupWindowCompat;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
 import java.lang.annotation.Retention;
@@ -109,7 +110,7 @@ public class RelativePopupWindow extends PopupWindow {
      */
     public void showOnAnchor(@NonNull View anchor, @VerticalPosition int vertPos, @HorizontalPosition int horizPos, int x, int y) {
         View contentView = getContentView();
-        contentView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        contentView.measure(makeDropDownMeasureSpec(getWidth()), makeDropDownMeasureSpec(getHeight()));
         final int measuredW = contentView.getMeasuredWidth();
         final int measuredH = contentView.getMeasuredHeight();
         switch (vertPos) {
@@ -147,6 +148,20 @@ public class RelativePopupWindow extends PopupWindow {
                 break;
         }
         PopupWindowCompat.showAsDropDown(this, anchor, x, y, Gravity.NO_GRAVITY);
+    }
+
+    @SuppressWarnings("ResourceType")
+    private static int makeDropDownMeasureSpec(int measureSpec) {
+        return View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(measureSpec), getDropDownMeasureSpecMode(measureSpec));
+    }
+
+    private static int getDropDownMeasureSpecMode(int measureSpec) {
+        switch (measureSpec) {
+            case ViewGroup.LayoutParams.WRAP_CONTENT:
+                return View.MeasureSpec.UNSPECIFIED;
+            default:
+                return View.MeasureSpec.EXACTLY;
+        }
     }
 
 }
