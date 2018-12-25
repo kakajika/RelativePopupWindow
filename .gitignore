@@ -10,6 +10,7 @@ build/
 .idea/libraries/
 .idea/scopes/
 .idea/inspectionProfiles/
+.idea/caches/
 
 
 ### https://raw.github.com/github/gitignore/2c0cb52a67921cf3dffb8098ba027f376f73f859/Android.gitignore
