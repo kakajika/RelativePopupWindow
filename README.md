@@ -52,7 +52,7 @@ popup.showOnAnchor(anchor, VerticalPosition.ABOVE, HorizontalPosition.CENTER, fa
 This library is available in jcenter.
 
 ```groovy
-compile 'com.labo.kaji:relativepopupwindow:0.3.1'
+implementation 'com.labo.kaji:relativepopupwindow:0.3.1'
 ```
 
 ## License
