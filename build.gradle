@@ -7,8 +7,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
-        classpath 'com.novoda:bintray-release:0.9'
-        classpath 'com.deploygate:gradle:1.1.5'
+        classpath 'com.novoda:bintray-release:0.9.1'
+        classpath 'com.deploygate:gradle:2.0.1'
     }
 }
 

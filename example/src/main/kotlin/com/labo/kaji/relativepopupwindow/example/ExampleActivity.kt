@@ -1,11 +1,11 @@
 package com.labo.kaji.relativepopupwindow.example
 
 import android.os.Bundle
-import android.support.annotation.ArrayRes
-import android.support.v7.app.AppCompatActivity
 import android.util.TypedValue
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.annotation.ArrayRes
+import androidx.appcompat.app.AppCompatActivity
 import com.labo.kaji.relativepopupwindow.RelativePopupWindow.HorizontalPosition
 import com.labo.kaji.relativepopupwindow.RelativePopupWindow.VerticalPosition
 import kotlinx.android.synthetic.main.activity_example.*

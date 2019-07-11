@@ -1,13 +1,14 @@
 package com.labo.kaji.relativepopupwindow.example.java;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.labo.kaji.relativepopupwindow.RelativePopupWindow.HorizontalPosition;
 import com.labo.kaji.relativepopupwindow.RelativePopupWindow.VerticalPosition;
@@ -20,31 +21,31 @@ public class ExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
 
-        final Spinner spinner_vertical = (Spinner) findViewById(R.id.spinner_vertical);
+        final Spinner spinner_vertical = findViewById(R.id.spinner_vertical);
         ArrayAdapter<String> adapterVertical = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
         adapterVertical.addAll(getResources().getStringArray(R.array.vertical_positions));
         adapterVertical.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_vertical.setAdapter(adapterVertical);
 
-        final Spinner spinner_horizontal = (Spinner) findViewById(R.id.spinner_horizontal);
+        final Spinner spinner_horizontal = findViewById(R.id.spinner_horizontal);
         ArrayAdapter<String> adapterHorizonal = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
         adapterHorizonal.addAll(getResources().getStringArray(R.array.horizontal_positions));
         adapterHorizonal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_horizontal.setAdapter(adapterHorizonal);
 
-        final Spinner spinner_width = (Spinner) findViewById(R.id.spinner_width);
+        final Spinner spinner_width = findViewById(R.id.spinner_width);
         ArrayAdapter<String> adapterWidth = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
         adapterWidth.addAll(getResources().getStringArray(R.array.width));
         adapterWidth.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_width.setAdapter(adapterWidth);
 
-        final Spinner spinner_height = (Spinner) findViewById(R.id.spinner_height);
+        final Spinner spinner_height = findViewById(R.id.spinner_height);
         ArrayAdapter<String> adapterHeight = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
         adapterHeight.addAll(getResources().getStringArray(R.array.height));
         adapterHeight.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_height.setAdapter(adapterHeight);
 
-        final CheckBox checkbox_fit_in_screen = (CheckBox) findViewById(R.id.checkbox_fit_in_screen);
+        final CheckBox checkbox_fit_in_screen = findViewById(R.id.checkbox_fit_in_screen);
 
         findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override
