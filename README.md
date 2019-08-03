@@ -54,7 +54,7 @@ This library is available in jcenter.
 - for AndroidX:
 
 ```groovy
-implementation 'com.labo.kaji:relativepopupwindow:0.4.0'
+implementation 'com.labo.kaji:relativepopupwindow:0.4.1'
 ```
 
 - for legacy Support Library:
