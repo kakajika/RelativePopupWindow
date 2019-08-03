@@ -2,6 +2,7 @@ package com.labo.kaji.relativepopupwindow;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -135,15 +136,23 @@ public class RelativePopupWindow extends PopupWindow {
      */
     public void showOnAnchor(@NonNull View anchor, @VerticalPosition int vertPos, @HorizontalPosition int horizPos, int x, int y, boolean fitInScreen) {
         setClippingEnabled(fitInScreen);
-        View contentView = getContentView();
-        contentView.measure(makeDropDownMeasureSpec(getWidth()), makeDropDownMeasureSpec(getHeight()));
+        final View contentView = getContentView();
+        final Rect windowRect = new Rect();
+        contentView.getWindowVisibleDisplayFrame(windowRect);
+        final int windowW = windowRect.width();
+        final int windowH = windowRect.height();
+        contentView.measure(
+                makeDropDownMeasureSpec(getWidth(), windowW),
+                makeDropDownMeasureSpec(getHeight(), windowH)
+        );
         final int measuredW = contentView.getMeasuredWidth();
         final int measuredH = contentView.getMeasuredHeight();
+        final int[] anchorLocation = new int[2];
+        anchor.getLocationInWindow(anchorLocation);
+        final int anchorBottom = anchorLocation[1] + anchor.getHeight();
         if (!fitInScreen) {
-            final int[] anchorLocation = new int[2];
-            anchor.getLocationInWindow(anchorLocation);
             x += anchorLocation[0];
-            y += anchorLocation[1] + anchor.getHeight();
+            y += anchorBottom;
         }
         switch (vertPos) {
             case VerticalPosition.ABOVE:
@@ -180,15 +189,31 @@ public class RelativePopupWindow extends PopupWindow {
                 break;
         }
         if (fitInScreen) {
+            if (y + anchorBottom < 0) {
+                y = -anchorBottom;
+            } else if (y + anchorBottom + measuredH > windowH) {
+                y = windowH - anchorBottom - measuredH;
+            }
             PopupWindowCompat.showAsDropDown(this, anchor, x, y, Gravity.NO_GRAVITY);
         } else {
             showAtLocation(anchor, Gravity.NO_GRAVITY, x, y);
         }
     }
 
-    @SuppressWarnings("ResourceType")
-    private static int makeDropDownMeasureSpec(int measureSpec) {
-        return View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(measureSpec), getDropDownMeasureSpecMode(measureSpec));
+    private static int makeDropDownMeasureSpec(int measureSpec, int maxSize) {
+        return View.MeasureSpec.makeMeasureSpec(
+                getDropDownMeasureSpecSize(measureSpec, maxSize),
+                getDropDownMeasureSpecMode(measureSpec)
+        );
+    }
+
+    private static int getDropDownMeasureSpecSize(int measureSpec, int maxSize) {
+        switch (measureSpec) {
+            case ViewGroup.LayoutParams.MATCH_PARENT:
+                return maxSize;
+            default:
+                return View.MeasureSpec.getSize(measureSpec);
+        }
     }
 
     private static int getDropDownMeasureSpecMode(int measureSpec) {
