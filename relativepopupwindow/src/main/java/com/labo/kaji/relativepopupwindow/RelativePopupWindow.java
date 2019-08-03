@@ -98,7 +98,11 @@ public class RelativePopupWindow extends PopupWindow {
      * @param vertPos Vertical Position Flag
      * @param horizPos Horizontal Position Flag
      */
-    public void showOnAnchor(@NonNull View anchor, @VerticalPosition int vertPos, @HorizontalPosition int horizPos) {
+    public void showOnAnchor(
+            @NonNull View anchor,
+            @VerticalPosition int vertPos,
+            @HorizontalPosition int horizPos
+    ) {
         showOnAnchor(anchor, vertPos, horizPos, 0, 0);
     }
 
@@ -109,7 +113,12 @@ public class RelativePopupWindow extends PopupWindow {
      * @param horizPos Horizontal Position Flag
      * @param fitInScreen Automatically fit in screen or not
      */
-    public void showOnAnchor(@NonNull View anchor, @VerticalPosition int vertPos, @HorizontalPosition int horizPos, boolean fitInScreen) {
+    public void showOnAnchor(
+            @NonNull View anchor,
+            @VerticalPosition int vertPos,
+            @HorizontalPosition int horizPos,
+            boolean fitInScreen
+    ) {
         showOnAnchor(anchor, vertPos, horizPos, 0, 0, fitInScreen);
     }
 
@@ -121,7 +130,13 @@ public class RelativePopupWindow extends PopupWindow {
      * @param x Translation X
      * @param y Translation Y
      */
-    public void showOnAnchor(@NonNull View anchor, @VerticalPosition int vertPos, @HorizontalPosition int horizPos, int x, int y) {
+    public void showOnAnchor(
+            @NonNull View anchor,
+            @VerticalPosition int vertPos,
+            @HorizontalPosition int horizPos,
+            int x,
+            int y
+    ) {
         showOnAnchor(anchor, vertPos, horizPos, x, y, true);
     }
 
@@ -134,7 +149,14 @@ public class RelativePopupWindow extends PopupWindow {
      * @param y Translation Y
      * @param fitInScreen Automatically fit in screen or not
      */
-    public void showOnAnchor(@NonNull View anchor, @VerticalPosition int vertPos, @HorizontalPosition int horizPos, int x, int y, boolean fitInScreen) {
+    public void showOnAnchor(
+            @NonNull View anchor,
+            @VerticalPosition int vertPos,
+            @HorizontalPosition int horizPos,
+            int x,
+            int y,
+            boolean fitInScreen
+    ) {
         setClippingEnabled(fitInScreen);
         final View contentView = getContentView();
         final Rect windowRect = new Rect();
@@ -224,6 +246,5 @@ public class RelativePopupWindow extends PopupWindow {
                 return View.MeasureSpec.EXACTLY;
         }
     }
-
 }
 
