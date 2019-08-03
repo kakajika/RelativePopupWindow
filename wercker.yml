@@ -28,4 +28,4 @@ deploy:
     - script:
         name: upload to deploygate
         code: |
-          curl -F file=@example/build/outputs/apk/example-debug.apk -F token="$DEPLOYGATE_API_KEY" https://deploygate.com/api/users/$USERNAME/apps
+          curl -F file=@example/build/outputs/apk/debug/example-debug.apk -F token="$DEPLOYGATE_API_KEY" https://deploygate.com/api/users/$USERNAME/apps
