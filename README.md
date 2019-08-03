@@ -5,6 +5,7 @@
 <img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat">
 [![API](https://img.shields.io/badge/API-9%2B-yellow.svg?style=flat)](https://android-arsenal.com/api?level=9)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RelativePopupWindow-green.svg?style=true)](https://android-arsenal.com/details/1/3908)
+[ ![Download](https://api.bintray.com/packages/kakajika/maven/relativepopupwindow/images/download.svg) ](https://bintray.com/kakajika/maven/relativepopupwindow/_latestVersion)
 
 Android PopupWindow that can be easily located relative to anchor View.
 
