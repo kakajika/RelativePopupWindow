@@ -2,6 +2,8 @@ package com.labo.kaji.relativepopupwindow.example
 
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.Menu
+import android.view.MenuItem
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.annotation.ArrayRes
@@ -65,6 +67,20 @@ class ExampleActivity : AppCompatActivity() {
             addAll(*resources.getStringArray(itemsResId))
             setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.action_open_list -> {
+                TouchAnchorExampleFragment().show(supportFragmentManager, "touchAnchor")
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }

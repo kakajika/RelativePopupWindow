@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="HardcodedText"
+    >
+    <item
+        android:title="Like"
+        app:showAsAction="never"
+        />
+    <item
+        android:title="Share"
+        app:showAsAction="never"
+        />
+</menu>
